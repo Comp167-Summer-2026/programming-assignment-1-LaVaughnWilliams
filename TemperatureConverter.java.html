@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>TemperatureConverter.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TemperatureConverter.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/* 
+import java.util.Scanner; 
+ 
+public class TemperatureConverter { 
+    public static double convertTemperature(double temperature, String unit) { 
+        Scanner scnr = new Scanner(System.in); 
+        unit = unit.toUpperCase(); 
+        double fahrenheitInitiator = scnr.nextDouble(); 
+        double celsiusInitiator = scnr.nextDouble(); 
+        double fahrenheitResult = ((celsiusInitiator * ((double) 9 / 5)) + 32); 
+        double celsiusResult = (fahrenheitInitiator - 32) * ((double) 5 /9); 
+        if (unit.equals(&quot;C&quot;)) { 
+            return celsiusResult; 
+        } 
+        else if (unit.equals(&quot;F&quot;)) { 
+            return fahrenheitResult; 
+        } 
+        return 0; 
+    } 
+ 
+    public static void main(String[] args) { 
+        System.out.print(&quot;Press c or f to choose a temperature, and stop to end: &quot;); 
+        Scanner scnr = new Scanner(System.in); 
+        convertTemperature(scnr.nextDouble(), scnr.next()); 
+        if (scnr.equals(&quot;stop&quot;)) { 
+            scnr.close(); 
+        } else { 
+            System.exit(0); 
+        } 
+    } 
+} 
+*/</span>
+
+<span class="s2">public static void </span><span class="s1">main</span><span class="s3">(</span><span class="s1">String</span><span class="s3">[] </span><span class="s1">args</span><span class="s3">) {</span>
+    <span class="s1">Scanner input </span><span class="s3">= </span><span class="s2">new </span><span class="s1">Scanner</span><span class="s3">(</span><span class="s1">System</span><span class="s3">.</span><span class="s1">in</span><span class="s3">);</span>
+    <span class="s1">String errorHandled</span><span class="s3">;</span>
+    <span class="s1">String decision </span><span class="s3">= </span><span class="s4">&quot;&quot;</span><span class="s3">;</span>
+    <span class="s2">double </span><span class="s1">temperatureC</span><span class="s3">;</span>
+    <span class="s2">double </span><span class="s1">temperatureF</span><span class="s3">;</span>
+    <span class="s2">while </span><span class="s3">(</span><span class="s1">decision</span><span class="s3">.</span><span class="s1">isEmpty</span><span class="s3">()) {</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Enter a temperature variant(c or f) or type stop: &quot;</span><span class="s3">);</span>
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">input</span><span class="s3">.</span><span class="s1">hasNext</span><span class="s3">(</span><span class="s4">&quot;c&quot;</span><span class="s3">)) {</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;enter a temperature&quot;</span><span class="s3">);</span>
+            <span class="s1">temperatureC </span><span class="s3">= </span><span class="s1">input</span><span class="s3">.</span><span class="s1">nextDouble</span><span class="s3">();</span>
+        <span class="s3">} </span><span class="s2">else if </span><span class="s3">(</span><span class="s1">input</span><span class="s3">.</span><span class="s1">hasNext</span><span class="s3">(</span><span class="s4">&quot;f&quot;</span><span class="s3">)) {</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;enter a temperature&quot;</span><span class="s3">);</span>
+            <span class="s1">temperatureF </span><span class="s3">= </span><span class="s1">input</span><span class="s3">.</span><span class="s1">nextDouble</span><span class="s3">();</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">print</span><span class="s3">(</span><span class="s1">temperatureF</span><span class="s3">);</span>
+        <span class="s3">} </span><span class="s2">else if </span><span class="s3">(</span><span class="s1">input</span><span class="s3">.</span><span class="s1">hasNext</span><span class="s3">(</span><span class="s4">&quot;stop&quot;</span><span class="s3">)) {</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;ending program&quot;</span><span class="s3">);</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">exit</span><span class="s3">(</span><span class="s5">0</span><span class="s3">);</span>
+        <span class="s3">}</span>
+        <span class="s2">else </span><span class="s3">{</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;Invalid input, please try again&quot;</span><span class="s3">);</span>
+            <span class="s1">errorHandled </span><span class="s3">= </span><span class="s1">input</span><span class="s3">.</span><span class="s1">next</span><span class="s3">();</span>
+        <span class="s3">}</span>
+    <span class="s3">}</span>
+<span class="s3">}</span></pre>
+</body>
+</html>
